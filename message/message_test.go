@@ -14,3 +14,7 @@ func TestNewMessage(t *testing.T) {
 		t.Error("new message header length error, length: ", len(msg.Header))
 	}
 }
+
+func TestMessage_GetCmd(t *testing.T) {
+	
+}
