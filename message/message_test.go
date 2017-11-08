@@ -109,3 +109,21 @@ func TestMessage_SetGet(t *testing.T)  {
 		t.Error("set message mask 3 error, ", msg.GetMask(1))
 	}
 }
+
+func TestMessage_InitData(t *testing.T) {
+	msg := NewMessage()
+	msg.SetLen(12)
+	msg.InitData()
+
+	if len(msg.Data) != int(msg.GetLen()) {
+		t.Error("new message data length error, ", len(msg.Data), msg.GetLen())
+	}
+
+	msg1 := NewMessage()
+	msg1.SetLen(0)
+	msg1.InitData()
+
+	if len(msg1.Data) != int(msg1.GetLen()) {
+		t.Error("new message data length error, ", len(msg1.Data), msg1.GetLen())
+	}
+}
