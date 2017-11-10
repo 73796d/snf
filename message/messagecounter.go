@@ -9,6 +9,7 @@ type MessageCounter struct {
 	C     uint32
 	Mutex *sync.Mutex
 }
+
 // 创建一个新的计数器
 func NewMessageCounter() *MessageCounter {
 	messageCounter := new(MessageCounter)
@@ -18,7 +19,7 @@ func NewMessageCounter() *MessageCounter {
 }
 
 // 返回计数器自增后的序列号
-func (mc *MessageCounter)Genarate() uint32 {
+func (mc *MessageCounter) Genarate() uint32 {
 	mc.Mutex.Lock()
 	defer mc.Mutex.Unlock()
 
