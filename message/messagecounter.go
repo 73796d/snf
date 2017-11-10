@@ -18,10 +18,10 @@ func NewMessageCounter() *MessageCounter {
 }
 
 // 返回计数器自增后的序列号
-func (this *MessageCounter)Genarate() uint32 {
-	this.Mutex.Lock()
-	defer this.Mutex.Unlock()
+func (mc *MessageCounter)Genarate() uint32 {
+	mc.Mutex.Lock()
+	defer mc.Mutex.Unlock()
 
-	this.C += 1
-	return this.C
+	mc.C += 1
+	return mc.C
 }
