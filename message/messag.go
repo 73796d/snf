@@ -9,6 +9,12 @@ import (
 	"github.com/golang/protobuf/proto"
 )
 
+// 消息标志位
+const (
+	MessageMaskDisconn = 0 //是否断开连接
+	MessageMaskNotify  = 1 //是否通知
+)
+
 // 消息头位位置
 const (
 	MessageIdBit    = 0  //消息来源或者目的id
